@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>example - page1</title>
+    <% if (env === "production") { %>
+        <link rel="stylesheet" href="/page1/index.css">
+    <% } %>
+</head>
+<body>
+    <label for="search">搜索</label>
+    <input type="text" name="search" id="searchbook">
+    <div id="content" style="width:500px;height:500px;margin-top:30px;"></div>
+    <script src="/page1/bundle.js"></script>
+    <% if (env !== "production" && reload === true) { %>
+        <script src="/reload/reload.js"></script>
+    <% } %>
+</body>
+</html>
