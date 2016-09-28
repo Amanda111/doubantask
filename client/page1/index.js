@@ -17,34 +17,33 @@ search.addEventListener("keyup"||"keydown",function(){
 			if (err) throw err;
 			content.innerHTML = ""
 			var book_info = res.body;
-			// book_info.books.length
 			for(var i = 0; i < 10; i++){
 				console.log(book_info.books[i].url)
 				console.log(i)
 				var div = document.createElement("div");
-				div.innerHTML = book_info.books[i].title;
+				div.innerHTML = "<a href='./"+ book_info.books[i].id + "'>" + book_info.books[i].title + "</a>";
 				div.className = "booklist";
 				content.appendChild(div);
 			}
 			var box = document.getElementsByClassName('booklist');
-			for(var i = 0;i < 10;i++){
-				(function(){
-					var item = i;
-					box[item].addEventListener("click",function(){
-						openpage(item);
-						console.log('lala')
-					})
-				})(i)
-			}
-			function openpage(n){
-				request
-					.post('/page2')
-					.send(book_info.books[n].url)
-					.end(function(err,res){
-						if (err) throw err;
-						console.log('haha')
-					})
-			}
+			// for(var i = 0;i < 10;i++){
+			// 	(function(){
+			// 		var item = i;
+			// 		box[item].addEventListener("click",function(){
+			// 			openpage(item);
+			// 			console.log('lala')
+			// 		})
+			// 	})(i)
+			// }
+			// function openpage(n){
+			// 	request
+			// 		.post('/page2')
+			// 		.send(book_info.books[n].url)
+			// 		.end(function(err,res){
+			// 			if (err) throw err;
+			// 			console.log('haha')
+			// 		})
+			// }
 		})
 
 	}

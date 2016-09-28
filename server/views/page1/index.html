@@ -8,9 +8,15 @@
     <% } %>
 </head>
 <body>
-    <label for="search">搜索</label>
-    <input type="text" name="search" id="searchbook">
-    <div id="content" style="width:500px;height:500px;margin-top:30px;"></div>
+    <div class="box">
+        <div class="box__img">
+            <img src="https://img3.doubanio.com/f/book/8f7e91543b899c4cc2e85b28f7e6152729411484/pics/nav/lg_book@2x.png">
+        </div>
+        <div class="box__main">
+            <input class="box__input" type="text" name="search" id="searchbook">
+            <div class="box__content" id="content"></div>
+        </div>
+    </div>
     <script src="/page1/bundle.js"></script>
     <% if (env !== "production" && reload === true) { %>
         <script src="/reload/reload.js"></script>

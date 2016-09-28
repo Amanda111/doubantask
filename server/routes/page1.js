@@ -1,11 +1,8 @@
-var express = require('express'),
-    router = express.Router();
+// var express = require('express'),
+//     router = express.Router();
 
-router.get('/', function(req, res) {
-    res.render('page1');
-});
+// router.get('/', function(req, res) {
+//     res.render('page1');
+// });
 
-
-
-
-module.exports = router;
+// module.exports = router;

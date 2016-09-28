@@ -7,15 +7,25 @@ var jsonp = require('superagent-jsonp');
 var book = document.getElementById('book'),
 	btn = document.getElementById('btn');
 
+console.log(window.location.pathname)
 
-// console.log(book)
-btn.addEventListener("click",function(){
-	request
-		.get('/page2')
-		.end(function(err,res){
-			if (err) throw err
-			console.log(res.body)
-		})
+var url = 'https://api.douban.com/v2/book' + window.location.pathname
+request
+	.get(url)
+	.use(jsonp)
+	.end(function(err,res){
+		if (err) throw err
+		console.log(res.body)
+	})
+
+// btn.addEventListener("click",function(){
+// 	console.log(window.location)
+	// request
+	// 	.get(url)
+	// 	.end(function(err,res){
+	// 		if (err) throw err
+	// 		console.log(res.body)
+	// 	})
 	// var text = book.value;
 	// if (text) {
 	// 	var url = 'https://api.douban.com/v2/book/search?q=' + text;
@@ -42,4 +52,4 @@ btn.addEventListener("click",function(){
 	// 				})
 	// 		})
 	// 	}
-	})
+	// })
