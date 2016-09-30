@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>example - page1</title>
-    <% if (env === "production") { %>
         <link rel="stylesheet" href="/page1/index.css">
-    <% } %>
 </head>
 <body>
     <div class="box">
@@ -18,8 +16,6 @@
         </div>
     </div>
     <script src="/page1/bundle.js"></script>
-    <% if (env !== "production" && reload === true) { %>
         <script src="/reload/reload.js"></script>
-    <% } %>
 </body>
 </html>

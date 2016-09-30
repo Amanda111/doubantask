@@ -20,6 +20,7 @@
     "consolidate": "^0.14.0",
     "ejs": "^2.4.1",
     "express": "^4.13.4",
+    "hbs": "^4.0.1",
     "superagent": "^2.2.0",
     "superagent-jsonp": "^0.1.1"
   },
